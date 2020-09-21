@@ -1,0 +1,18 @@
+<mat-toolbar [ngClass]="'main-header-toolbar'">
+  <button mat-mini-fab color="primary" aria-label="menu-icon" (click)="mainSideNav.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav #mainSideNav [mode]="'over'">
+    <nav>
+      <div class="nav-group-links">
+        <a class="nav-group-link" [routerLink]="'/first-page'" routerLinkActive="active">
+          <span class="nav-group-link__text">Сторінка 1</span>
+        </a>
+      </div>
+    </nav>
+  </mat-sidenav>
+  <!-- <mat-sidenav-content></mat-sidenav-content> -->
+</mat-sidenav-container>

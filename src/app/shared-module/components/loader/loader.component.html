@@ -1,0 +1,16 @@
+<div [ngClass]="config.customClass">
+	<div class="backdrop"
+			 [ngClass]="config.type"
+			 [ngStyle]="{'border-radius': config.backdropBorderRadius, 'min-height': config.backdropMinHeight + 'px'}">
+      <div class="wrapper"
+           [ngClass]="[config.loaderPosition, config.loaderSize, config.type]"
+           [ngStyle]="{'color': config.loaderColor}">
+        <div *ngIf="config?.loaderShape === LOADER_SHAPE.CHASING_DOTS" class="chasing-dots"></div>
+        <div *ngIf="config?.loaderShape === LOADER_SHAPE.BOUNCING_DOTS" class="bouncing-dots">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+	</div>
+</div>

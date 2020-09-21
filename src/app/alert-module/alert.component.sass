@@ -1,0 +1,50 @@
+@import "../../assets/styles/vars"
+
+.alert-wrapper
+    z-index: 11111
+    position: fixed
+    bottom: 20px
+    left: 50%
+    transform: translateX(-50%)
+    border-radius: 4px
+    width: 60%
+    max-width: 500px
+
+.alert
+    position: relative
+    display: flex
+    align-items: center
+    justify-content: center
+    padding: 8px 16px
+    border-radius: $main-border-radius
+    color: $light-grey
+    box-shadow: 0 3px 5px -1px rgba(0, 0, 0, .2), 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12)
+
+    .alert__icon,
+    .alert__message,
+    .alert__control-btn
+        font-size: 16px
+
+    .alert__message
+        flex-grow: 1
+        text-align: center
+
+    .alert__control-btn
+        ::ng-deep
+            app-svg
+                span
+                    display: flex
+                    justify-content: center
+                svg.icon
+                    cursor: pointer
+                    width: 25px
+                    height: 25px
+                    path
+                        fill: $light-grey
+                        fill-opacity: 1
+
+.alert.alert--danger
+    background-color: rgba($main-error-color, .8)
+
+.alert.alert--success
+    background-color: $main-success-color

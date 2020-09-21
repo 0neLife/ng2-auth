@@ -1,1 +1,49 @@
 /* You can add global styles to this file, and also import other style files */
+@import './assets/styles/index'
+
+body
+	overflow-x: hidden
+	margin: 0
+	padding: 0
+	position: relative
+	min-width: 320px
+	font-family: $primary_font
+	font-weight: $light
+	font-size: $primary-fs
+	color: $dark-light-text
+	line-height: 1.6
+
+h1, h2, h3, h4, h5, h6
+	font-family: $primary_font
+	color: $dark-deep-text
+
+h1, h2, h3, h4, h5, h6, ul, p
+	margin: 0
+	padding: 0
+	list-style-type: none
+
+input,
+textarea,
+button
+	outline: none
+	border: none
+	font-size: $primary-fs
+
+button
+	margin: 0
+	padding: 0
+	cursor: pointer
+	background-color: transparent
+
+.flex-center
+	display: flex
+	justify-content: center
+	align-items: center
+
+.inline-flex-center
+	display: inline-flex
+	justify-content: center
+	align-items: center
+
+a
+	text-decoration: none

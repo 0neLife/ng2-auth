@@ -1,0 +1,27 @@
+@import "../../../assets/styles/vars"
+
+.form-content
+  padding: 20px 30px
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  border-radius: $main-border-radius
+  border: 1px solid rgba(0,0,0,.12)
+  .form-content__title
+    margin-bottom: 10px
+    h4
+      font-size: $fs-md
+  form
+    display: flex
+    flex-direction: column
+    min-width: 400px
+    background-color: white
+    .mat-form-field
+      margin-bottom: 10px
+    .mat-button-base
+      min-height: 50px

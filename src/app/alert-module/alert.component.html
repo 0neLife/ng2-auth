@@ -1,0 +1,16 @@
+<div class="alert-wrapper">
+  <div class="alert"
+       *ngIf="alertConfig"
+       [@alertAnimation]
+       [ngClass]="{
+        'alert--success': alertConfig.type === ALERT_TYPE.SUCCESS,
+        'alert--danger': alertConfig.type === ALERT_TYPE.DANGER
+      }">
+    <div class="alert__message noselect">{{alertConfig.message}}</div>
+    <div class="alert__control-btn">
+      <button mat-icon-button (click)="closeAlert()">
+        <app-svg [name]="CLOSE_ICON"></app-svg>
+      </button>
+    </div>
+  </div>
+</div>

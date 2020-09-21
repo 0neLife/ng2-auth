@@ -1,0 +1,33 @@
+<div class="form-content" [apploader]="isLoading">
+  <div class="form-content__title">
+    <h4>Вхід</h4>
+  </div>
+
+  <form autocomplete="off" novalidate [formGroup]="loginForm" (ngSubmit)="submitLoginForm()">
+
+    <mat-form-field appearance="outline">
+      <mat-label>Пошта</mat-label>
+      <input matInput formControlName="email" placeholder="Ex. pat@example.com">
+      <mat-error *ngIf="email.errors && email.errors.required">
+        Поле обов'язково має бути заповненим
+      </mat-error>
+      <mat-error *ngIf="email.errors &&  email.errors.pattern">
+        Невірно вказана поштова адреса
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Пароль</mat-label>
+      <input matInput formControlName="password" [type]="isHidePassword ? 'password' : 'text'">
+      <button mat-icon-button matSuffix (click)="isHidePassword = !isHidePassword" [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="isHidePassword">
+        <mat-icon>{{isHidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+      <mat-error *ngIf="password.errors && password.errors.required">
+        Поле обов'язково має бути заповненим
+      </mat-error>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit">Увійти</button>
+  </form>
+</div>
